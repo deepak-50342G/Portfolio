@@ -9,45 +9,44 @@
 <body>
     <header>
         <nav>
-            <div class="left">😎Deepak's Portfolio</div>
-            <div class="right">
-                <ul>
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/pboutt.html">About</a></li>
-                    <li><a href="https://github.com/deepak-50342G">Projects</a></li>
-                    <li><a href="/maill.html">Contect Me</a></li>
-                </ul>
-            </div>
+            <div class="left">😎 Deepak's Portfolio</div>
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="pboutt.html">About</a></li>
+                <li><a href="https://github.com/deepak-50342G" target="_blank" rel="noopener noreferrer">Projects</a></li>
+                <li><a href="maill.html">Contact Me</a></li>
+            </ul>
         </nav>
     </header>
+
     <main>
         <section>
-            <div class="leftsection">Hey there! I’m <span class="name">Deepak</span>,
-            <div>an <span id="element" class="name"></span> on a mission to make machines think smarter every day.</div>
+            <div class="leftsection">
+                <p>Hey there! I’m <span class="name">Deepak</span>,</p>
+                <p>an <span id="element" class="name"></span> on a mission to make machines think smarter every day.</p>
 
-            <div>
                 <div class="btn">
-                    <a href="https://fine-bakery-0b6.notion.site/Resume-2752f79016e580518cdcd2bb510b0cf9"><button class="btnn">Download Resume</button></a>
-                    <a href="https://github.com/deepak-50342G"><button class="btnn">Visit GitHub</button></a>
+                    <a class="btnn" href="assets/resume.pdf" download="Deepak_Kumar_Resume.pdf">Download Resume</a>
+                    <a class="btnn" href="https://github.com/deepak-50342G" target="_blank" rel="noopener noreferrer">Visit GitHub</a>
                 </div>
             </div>
-            </div>
-            
-            
+
             <div class="rightsection">
-                <img src="bgp.png" alt="">
+                <img src="bgp.png" alt="Illustration of Deepak's work">
             </div>
         </section>
-        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     </main>
+
     <footer>
         <div class="bottom">© 2025 Deepak. All rights reserved.</div>
     </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
-    var typed = new Typed('#element', {
-      strings: ['ML Engineer'],
-      typeSpeed: 80,
-    });
-  </script>
+        new Typed('#element', {
+            strings: ['ML Engineer'],
+            typeSpeed: 80,
+        });
+    </script>
 </body>
 </html>

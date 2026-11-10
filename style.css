@@ -1,81 +1,201 @@
-body{
-    background: rgb(136, 136, 136);
-    color: white;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+:root {
+  --bg: #2b2b2b;
+  --surface: #1c1c1c;
+  --surface-2: #3a3a3a;
+  --text: #ffffff;
+  --accent: #98ff30;
 }
-*{
-    margin: 0;
-    padding: 0;
-}
-nav{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 50px;
-    background-color: rgb(65, 65, 65);
-}
-nav ul{
-    display: flex;
-}
-nav ul li{
-    list-style: none;
-    margin: 0 15px;
-}
-nav ul li a{
-    text-decoration: none;
-    color: white;
-}
-nav ul li a:hover{
-    color: rgb(152, 255, 48);
-}
-.left{
-    font-size: 1.3rem;
-}
-section{
-    display: flex;
-    justify-content: space-around;
-    margin:20px 0;
-}
-.leftsection{
 
-    margin-top: 120px;
-    margin-left: 90px;
-    width: 40%;
-    font-size: 2rem;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.left_inner{
-    color: rgb(152, 255, 48);
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  padding-bottom: 70px; /* keeps content clear of the fixed footer */
 }
-.rightsection{
-    width: 40%;
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
-.name{
-    color: rgb(152, 255, 48);
-    background-color:rgb(111, 111, 111);
-    border-radius: 5px
+
+/* ---------- NAV ---------- */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 8px 5%;
+  background-color: var(--surface);
 }
-footer{
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text);
+  padding: 6px 4px;
+  transition: color 0.2s;
+}
+
+nav ul li a:hover,
+nav ul li a:focus-visible,
+nav ul li a[aria-current="page"] {
+  color: var(--accent);
+}
+
+.left {
+  font-size: 1.3rem;
+}
+
+/* ---------- MAIN SECTION ---------- */
+section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 0 5%;
+  margin: 20px 0;
+}
+
+.leftsection {
+  width: 50%;
+  margin-top: 60px;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+}
+
+.leftsection p + p,
+.leftsection p + .btn {
+  margin-top: 0.6em;
+}
+
+.leftsection.small {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+}
+
+.rightsection {
+  width: 45%;
+}
+
+.name {
+  color: var(--accent);
+  background-color: var(--surface-2);
+  border-radius: 5px;
+  padding: 0 6px;
+}
+
+.name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.name a:hover,
+.name a:focus-visible {
+  text-decoration: underline;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btnn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface);
+  color: var(--text);
+  min-height: 44px;
+  padding: 10px 24px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btnn:hover,
+.btnn:focus-visible {
+  color: var(--accent);
+  background-color: var(--surface-2);
+}
+
+/* ---------- FOOTER ---------- */
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(65, 65, 65);
-  color: white;
+  background: var(--surface);
+  color: var(--text);
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 60px; /* Set a height you like */
+  height: 60px;
+  padding: 0 10px;
+  text-align: center;
+  font-size: 0.9rem;
 }
-.btnn{
-    background-color:rgb(65, 65, 65);
-    color: white;
-    height: 5vh;
-    width: 23vh;
-    border-radius: 5px;
-    border-width: 0;
+
+/* ---------- TABLET ---------- */
+@media (max-width: 900px) {
+  section {
+    gap: 20px;
+  }
+  .leftsection {
+    margin-top: 30px;
+  }
 }
-.btnn:hover{
-    color:rgb(152, 255, 48);
-    background-color: rgb(136, 136, 136);
-    font-size: 15px;
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 700px) {
+  nav {
+    justify-content: center;
+    text-align: center;
+  }
+
+  section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .leftsection,
+  .rightsection {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .btn {
+    justify-content: center;
+  }
+
+  .btnn {
+    width: 100%;
+    max-width: 280px;
+  }
 }
